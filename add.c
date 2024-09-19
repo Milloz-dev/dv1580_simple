@@ -7,15 +7,17 @@
 int main(int argc, char *argv[]) {
      char *endptr;
 
-     // Convert the arguments to double
-    double num1 = strtod(argv[1], &endptr);
+        // Convert the first argument to long (int) and check for errors
+    long num1 = strtol(argv[1], &endptr, 10);
     if (*endptr != '\0') {
-        fprintf(stderr, "-Error- : '%s' is not a valid number.\n", argv[1]);
+        fprintf(stderr, "Error: '%s' is not a valid number.\n", argv[1]);
         return 1;
     }
-    double num2 = strtod(argv[2], &endptr);
+
+    // Convert the second argument to long (int) and check for errors
+    long num2 = strtol(argv[2], &endptr, 10);
     if (*endptr != '\0') {
-        fprintf(stderr, "-Error- : '%s' is not a valid number.\n", argv[2]);
+        fprintf(stderr, "Error: '%s' is not a valid number.\n", argv[2]);
         return 1;
     }
     // Calculate the sum

@@ -9,12 +9,12 @@ int main(int argc, char *argv[]){
      // Convert the arguments to double
     double num1 = strtod(argv[1], &endptr);
     if (*endptr != '\0') {
-        fprintf(stderr, "-Error- : '%s' is not a valid number.\n", argv[1]);
+        fprintf(stderr, "Error: '%s' is not a valid number.\n", argv[1]);
         return 1;
     }
     double num2 = strtod(argv[2], &endptr);
     if (*endptr != '\0') {
-        fprintf(stderr, "-Error- : '%s' is not a valid number.\n", argv[2]);
+        fprintf(stderr, "Error: '%s' is not a valid number.\n", argv[2]);
         return 1;
     }
      if (num2 == 0) {
